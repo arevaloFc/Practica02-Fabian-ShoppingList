@@ -3,6 +3,7 @@ import { Button, TextInput, View } from "react-native";
 import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import SelectDropdown from 'react-native-select-dropdown';
+import NumericInput from 'react-native-numeric-input'
 import 'react-native-get-random-values'
 
 const ProductInput = ({onProductAdd ,product, setProduct}) => {
@@ -47,7 +48,15 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                     defaultButtonText={'wey'}
                 />
             </View>
-            <View></View>
+            <View>
+                <NumericInput 
+                    minValue={0}
+                    maxValue={99}
+                    valueType={'integer'}
+                    rounded={true}
+                    initValue={product.quantity}
+                />
+            </View>
         </View>
     );
 }
@@ -71,8 +80,9 @@ const styles = StyleSheet.create({
     }
 });
 
-//npm i react-native-get-random-values 
-//npm install uuid 
-//npm install react-native-select-dropdown
+// npm i react-native-get-random-values 
+// npm install uuid 
+// npm install react-native-select-dropdown
+// npm install react-native-numeric-input --save
 
 export default ProductInput;
