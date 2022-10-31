@@ -20,6 +20,10 @@ export default function App() {
     console.log(productName)
   }
 
+  const removeProductHandler = () => {
+    setProducts(() => []);
+  }
+
   return (
     <View style={styles.container}>
       <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
