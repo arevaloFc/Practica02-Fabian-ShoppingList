@@ -16,8 +16,18 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
 
     return (
         <View style={styles.productInput}>
-            <TextInput style={styles.productName} placeholder='Introduzca un producto' />
-            <Button style={styles.addButton} title="Añadir" />
+            <View>
+                <TextInput style={styles.productName}
+                    placeholder='Introduzca un producto'
+                    keyboardType="text"
+                    onChangeText={changeTextHandler}
+                    value={product.name}
+                    maxLength={40}
+                />
+            </View>
+            <View>
+                
+            </View>
         </View>
     );
 }
