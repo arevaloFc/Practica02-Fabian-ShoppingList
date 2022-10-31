@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View ,Button} from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 import ListItem from './components/ListItem';
 import ProductInput from './components/ProductInput';
@@ -26,8 +26,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
-      <ScrollView style={styles.productScroll}>
+      <View style={styles.productInput}>
+        <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
+      </View>
+      <ScrollView style={styles.listItem}>
         <View style={styles.productList}>
           { 
             products.length === 0 
@@ -41,29 +43,48 @@ export default function App() {
               ))
           }
         </View>
-        </ScrollView>
+      </ScrollView>
+      <View style={styles.buttonBorrar}>
         <Button
+          color="#3EA588"
           title="clear"
           disabled={products.length === 0 }
           onPress={removeProductHandler}
         /> 
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+
   container: {
-    flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
     width: '100%',
+    height: '100%',
+  },
+
+  productInput: {
     marginTop: 50,
-    backgroundColor: '#fff'
+    width: '95%',
+    height: 150
+  },
+
+  listItem: {
+    marginTop: 25,
+    width: '100%',
   },
 
   productList: {
     marginTop: 10,
-    flex: 4
+    width: '100%',
+    alignItems: 'center',
   },
+
+  buttonBorrar: {
+    margin: 20,
+    width: '40%',
+  }
 
 });
