@@ -1,7 +1,19 @@
 import { StyleSheet } from "react-native";
 import { Button, TextInput, View } from "react-native";
+import { v4 as uuidv4 } from 'uuid';
+import 'react-native-get-random-values'
 
 const ProductInput = ({onProductAdd ,product, setProduct}) => {
+    const changeTextHandler = (value) => {
+        setProduct((product)=>{
+            return{
+                ...product,
+                id: uuidv4(),
+                name:value
+            }
+        });
+    }
+
     return (
         <View style={styles.productInput}>
             <TextInput style={styles.productName} placeholder='Introduzca un producto' />
@@ -28,5 +40,8 @@ const styles = StyleSheet.create({
         flex: 1
     }
 });
+
+//npm i react-native-get-random-values 
+//npm install uuid 
 
 export default ProductInput;
