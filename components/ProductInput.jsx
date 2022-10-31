@@ -67,6 +67,10 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                     rounded={true}
                     initValue={product.quantity}
                 />
+                <Button
+                    style={styles.addButton}
+                    title="Añadir"
+                />
             </View>
         </View>
     );
