@@ -17,7 +17,7 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
         });
     }
 
-    const countries = ["fruit", "vegetable", "bakery", "fish", "meat"]
+    const tipos = ["fruit", "vegetable", "bakery", "fish", "meat"]
     const limpiarSelectDropdown = useRef();
 
     const changetype = (value) => {
@@ -40,7 +40,7 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                     maxLength={40}
                 />
                 <SelectDropdown
-                    data={countries}
+                    data={tipos}
                     onSelect={changetype}
                     ref={limpiarSelectDropdown} 
                     defaultValue={product.type}
