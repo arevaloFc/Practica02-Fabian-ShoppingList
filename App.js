@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View ,Button} from 'react-native';
 import { useState } from 'react';
 import ListItem from './components/ListItem';
 import ProductInput from './components/ProductInput';
@@ -42,6 +42,11 @@ export default function App() {
           }
         </View>
         </ScrollView>
+        <Button
+          title="clear"
+          disabled={products.length === 0 }
+          onPress={removeProductHandler}
+        /> 
     </View>
   );
 }
