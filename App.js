@@ -1,13 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
+import ListItem from './components/ListItem';
 import ProductInput from './components/ProductInput';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ProductInput />
-      <View>
-        <Text>Cuerpo</Text>
-      </View>
+      <ProductInput/>
+      <ListItem/>
     </View>
   );
 }
