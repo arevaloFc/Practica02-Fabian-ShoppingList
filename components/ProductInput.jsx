@@ -13,7 +13,8 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
             return{
                 ...product,
                 id: uuidv4(),
-                name:value
+                bought: true,
+                name:value.trim()
             }
         });
     }
