@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Button, TextInput, View } from "react-native";
 import { v4 as uuidv4 } from 'uuid';
+import SelectDropdown from 'react-native-select-dropdown';
 import 'react-native-get-random-values'
 
 const ProductInput = ({onProductAdd ,product, setProduct}) => {
@@ -12,7 +13,10 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                 name:value
             }
         });
+
     }
+
+    const countries = ["fruit", "vegetable", "bakery", "fish", "meat"]
 
     return (
         <View style={styles.productInput}>
@@ -24,10 +28,13 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                     value={product.name}
                     maxLength={40}
                 />
+                <SelectDropdown
+                    data={countries}
+                    defaultValue={product.type}
+                    defaultButtonText={'wey'}
+                />
             </View>
-            <View>
-                
-            </View>
+            <View></View>
         </View>
     );
 }
@@ -53,5 +60,6 @@ const styles = StyleSheet.create({
 
 //npm i react-native-get-random-values 
 //npm install uuid 
+//npm install react-native-select-dropdown
 
 export default ProductInput;
