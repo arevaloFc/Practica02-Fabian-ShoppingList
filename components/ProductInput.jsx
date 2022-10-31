@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-
 import { Button, TextInput, View } from "react-native";
 
 const ProductInput = () => {
