@@ -7,10 +7,19 @@ const ListItem = ({productName}) => {
 
     switch (productName.type) {
         case "fruit":
-                cambioImagenTipo = require('../assets/splash.png')
+                cambioImagenTipo = require('../assets/manzana.jpg')
+            break;
+        case "vegetable":
+                cambioImagenTipo = require('../assets/lechuga.jpg')
+            break;
+        case "bakery":
+                cambioImagenTipo = require('../assets/pan.jpg')
             break;
         case "fish":
-                cambioImagenTipo = require('../assets/icon.png')
+                cambioImagenTipo = require('../assets/pescado.jpg')
+            break;
+        case "meat":
+                cambioImagenTipo = require('../assets/carne.jpg')
             break;
         default:
             break;
@@ -34,10 +43,31 @@ const ListItem = ({productName}) => {
 }
 
 const styles = StyleSheet.create({
+    listItem: {
+        width: '80%',
+        justifyContent: 'center',
+    },
+
     productImage: {
         width: 100,
         height: 100
     },
+
+    productName: {
+        color: 'white'
+    },
+
+    productCard: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+
+    text: {
+        flex: 5,
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems: 'center',
+    }
 });
 
 export default ListItem

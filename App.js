@@ -30,7 +30,7 @@ export default function App() {
         <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
       </View>
       <ScrollView style={styles.listItem}>
-        <View>
+        <View style={styles.productList}>
           { 
             products.length === 0 
               ? <Text>Aún no hay productos</Text> 
@@ -62,20 +62,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     height: '100%',
-    backgroundColor: 'red'
   },
 
   productInput: {
     marginTop: 50,
-    backgroundColor: 'blue',
-    width: '100%',
-    height: '20%'
+    width: '95%',
+    height: 150
   },
 
   listItem: {
     marginTop: 25,
-    backgroundColor: 'green',
-    width: '100%'
+    width: '100%',
+  },
+
+  productList: {
+    marginTop: 10,
+    width: '100%',
+    alignItems: 'center',
   },
 
   buttonBorrar: {

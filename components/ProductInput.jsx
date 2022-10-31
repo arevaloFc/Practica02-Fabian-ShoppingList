@@ -61,23 +61,26 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
 
     return (
         <View style={styles.productInput}>
-            <View>
-                <TextInput style={styles.productName}
-                    placeholder='Introduzca un producto'
+            <View style={styles.order}>
+                <TextInput
+                    style={styles.inputText}
+                    placeholder='Product name'
                     keyboardType="text"
                     onChangeText={changeTextHandler}
                     value={product.name}
                     maxLength={40}
                 />
                 <SelectDropdown
+                    style={styles.order}
                     data={tipos}
                     onSelect={changetype}
                     ref={limpiarSelectDropdown} 
                     defaultValue={product.type}
-                    defaultButtonText={'wey'}
+                    defaultButtonText={'Type'} 
+                    buttonStyle={styles.dropdown1BtnStyle} 
                 />
             </View>
-            <View>
+            <View style={styles.order}>
                 <NumericInput 
                     onChange={changenNunberHandler} 
                     minValue={0}
@@ -85,34 +88,61 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                     valueType={'integer'}
                     rounded={true}
                     initValue={product.quantity}
+                    rightButtonBackgroundColor={'#a7ffe6'}
+                    leftButtonBackgroundColor={'#a7ffe6'}
                 />
-                <Button
-                    style={styles.addButton}
-                    title="Añadir"
-                    onPress={addProductHandler}
-                />
+                <View style={styles.buttonEnviar}>
+                    <Button 
+                        color="#3EA588"
+                        title="Add"
+                        onPress={addProductHandler}
+                    />
+                </View>
             </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+
     productInput: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: "#eef4ed",
-        width: '80%',
-        height: 80,
+        backgroundColor: "#75ccb4",
+        width: '100%',
+        height: '100%',
         borderRadius: 5,
         padding: 10
     },
-    productName: {
-        flex: 4
+
+    order: {
+        width: '50%',
+        height: '100%',
+        justifyContent: 'space-around',
+        alignItems: 'center',
     },
-    addButton: {
-        flex: 1
+
+    inputText: {
+        backgroundColor: '#fff',
+        width: '100%',
+        height: '40%',
+        textAlign: 'center',
+        padding: 12,
+        fontSize: 15,
+    },
+
+    dropdown1BtnStyle: {
+        width: '100%',
+        height: '40%',
+        backgroundColor: '#FFF',
+        borderColor: '#444',
+    },
+
+    buttonEnviar: {
+        width: '80%',
     }
+
 });
 
 // npm i react-native-get-random-values 
