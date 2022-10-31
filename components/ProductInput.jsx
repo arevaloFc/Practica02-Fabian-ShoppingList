@@ -40,6 +40,25 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
         });
     }
 
+    const addProductHandler = () => {
+        if (
+                product.name !== '' && product.quantity !== 0 && 
+                product.type !== '' && product.name !== undefined && 
+                product.quantity !== undefined && product.type !== undefined &&
+                product.quantity >= 1
+            ) {
+            onProductAdd(product);
+            setProduct('')
+            setProduct({...product, name:'', quantity:0 })
+            limpiarSelectDropdown.current.reset()
+        } else {
+            alert(`Ejemplo: 
+            Nombre: Manzana
+            Cantidad: de 1 a 99
+            Tipo: fruit`)
+        }
+    }
+
     return (
         <View style={styles.productInput}>
             <View>
@@ -70,6 +89,7 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                 <Button
                     style={styles.addButton}
                     title="Añadir"
+                    onPress={addProductHandler}
                 />
             </View>
         </View>
