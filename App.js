@@ -46,6 +46,7 @@ export default function App() {
       </ScrollView>
       <View style={styles.buttonBorrar}>
         <Button
+          color="#3EA588"
           title="clear"
           disabled={products.length === 0 }
           onPress={removeProductHandler}
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
 
   buttonBorrar: {
     margin: 20,
-    width: '50%',
+    width: '40%',
   }
 
 });

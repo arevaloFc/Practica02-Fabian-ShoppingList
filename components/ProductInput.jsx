@@ -127,9 +127,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         width: '100%',
         height: '40%',
-        textAlign: 'center',
         padding: 12,
         fontSize: 15,
+        textAlign: 'center'
     },
 
     dropdown1BtnStyle: {
