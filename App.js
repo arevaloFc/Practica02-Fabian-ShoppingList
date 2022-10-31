@@ -1,8 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
 import ListItem from './components/ListItem';
 import ProductInput from './components/ProductInput';
 
 export default function App() {
+
+  const [ products, setProducts ] = useState([])
+
+  const [ product, setProduct ] = useState({
+    id: '',
+    name: '',
+    quantity: 0,
+    bought: false,
+    type: ''
+  });
+
   return (
     <View style={styles.container}>
       <ProductInput/>
