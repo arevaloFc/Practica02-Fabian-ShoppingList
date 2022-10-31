@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 import { Button, TextInput, View } from "react-native";
 
-const ProductInput = () => {
+const ProductInput = ({onProductAdd ,product, setProduct}) => {
     return (
         <View style={styles.productInput}>
             <TextInput style={styles.productName} placeholder='Introduzca un producto' />

@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ProductInput/>
+      <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
       <ListItem/>
     </View>
   );
