@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View ,Button} from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 import ListItem from './components/ListItem';
 import ProductInput from './components/ProductInput';
@@ -26,9 +26,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
-      <ScrollView style={styles.productScroll}>
-        <View style={styles.productList}>
+      <View>
+        <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
+      </View>
+      <ScrollView>
+        <View>
           { 
             products.length === 0 
               ? <Text>Aún no hay productos</Text> 
@@ -41,29 +43,26 @@ export default function App() {
               ))
           }
         </View>
-        </ScrollView>
+      </ScrollView>
+      <View>
         <Button
           title="clear"
           disabled={products.length === 0 }
           onPress={removeProductHandler}
         /> 
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    marginTop: 50,
-    backgroundColor: '#fff'
-  },
 
-  productList: {
-    marginTop: 10,
-    flex: 4
+  container: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'red'
   },
 
 });
