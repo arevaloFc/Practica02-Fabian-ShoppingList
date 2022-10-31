@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, Image, Pressable} from 'react-native';
+import { useState } from 'react';
 
 const ListItem = ({productName}) => {
 
@@ -15,9 +16,11 @@ const ListItem = ({productName}) => {
             break;
     }
 
+    const [color, setColor] = useState('cyan');
+
     return (
-        <Pressable style={styles.listItem}>
-            <View  style={{backgroundColor: 'red',width:'100%', marginBottom: 10}} >
+        <Pressable style={styles.listItem} onPress={() => setColor(color === 'blue' ? 'cyan' : 'blue') }>
+            <View  style={{backgroundColor: color,width:'100%', marginBottom: 10}} >
                 <View style={styles.productCard} >
                     <Image style={styles.productImage} source={cambioImagenTipo} />
                     <View style={styles.text}>
