@@ -1,12 +1,10 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import ProductInput from './components/ProductInput';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.productInput}>
-        <TextInput style={styles.productName} placeholder='Introduzca un producto'/>
-        <Button style={styles.addButton}title="Añadir" />
-      </View>
+      <ProductInput />
       <View>
         <Text>Cuerpo</Text>
       </View>
@@ -17,29 +15,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+    marginTop: 30,
+    backgroundColor: '#fff'
   },
 
-  productInput: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: "#eef4ed",
-    width: '80%',
-    height: 80,
-    borderRadius: 5,
-    padding: 10
-  },
-
-  productName: {
+  productList: {
     flex: 4
   },
-
-  addButton: {
-    flex: 1
-  }
 
 });
