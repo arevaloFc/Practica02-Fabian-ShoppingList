@@ -30,6 +30,16 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
         });
     }
 
+    const changenNunberHandler = (value) => {
+
+        setProduct((product)=>{
+            return{
+                ...product,
+                quantity:value
+            }
+        });
+    }
+
     return (
         <View style={styles.productInput}>
             <View>
@@ -50,6 +60,7 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
             </View>
             <View>
                 <NumericInput 
+                    onChange={changenNunberHandler} 
                     minValue={0}
                     maxValue={99}
                     valueType={'integer'}
