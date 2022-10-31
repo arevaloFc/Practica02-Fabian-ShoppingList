@@ -15,6 +15,11 @@ export default function App() {
     type: ''
   });
 
+  const addProductHandler = (productName) => {
+    setProducts(() => [productName,...products]);
+    console.log(productName)
+  }
+
   return (
     <View style={styles.container}>
       <ProductInput/>
