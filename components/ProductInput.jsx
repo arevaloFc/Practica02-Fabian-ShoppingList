@@ -1,10 +1,12 @@
 import { StyleSheet } from "react-native";
 import { Button, TextInput, View } from "react-native";
+import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import SelectDropdown from 'react-native-select-dropdown';
 import 'react-native-get-random-values'
 
 const ProductInput = ({onProductAdd ,product, setProduct}) => {
+
     const changeTextHandler = (value) => {
         setProduct((product)=>{
             return{
@@ -13,10 +15,19 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                 name:value
             }
         });
-
     }
 
     const countries = ["fruit", "vegetable", "bakery", "fish", "meat"]
+    const limpiarSelectDropdown = useRef();
+
+    const changetype = (value) => {
+        setProduct((product)=>{
+            return{
+                ...product,
+                type:value
+            }
+        });
+    }
 
     return (
         <View style={styles.productInput}>
@@ -30,6 +41,8 @@ const ProductInput = ({onProductAdd ,product, setProduct}) => {
                 />
                 <SelectDropdown
                     data={countries}
+                    onSelect={changetype}
+                    ref={limpiarSelectDropdown} 
                     defaultValue={product.type}
                     defaultButtonText={'wey'}
                 />
