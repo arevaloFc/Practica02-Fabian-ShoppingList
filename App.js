@@ -26,10 +26,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.productInput}>
         <ProductInput onProductAdd={addProductHandler} product={product} setProduct={setProduct}/>
       </View>
-      <ScrollView>
+      <ScrollView style={styles.listItem}>
         <View>
           { 
             products.length === 0 
@@ -44,7 +44,7 @@ export default function App() {
           }
         </View>
       </ScrollView>
-      <View>
+      <View style={styles.buttonBorrar}>
         <Button
           title="clear"
           disabled={products.length === 0 }
@@ -64,5 +64,23 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'red'
   },
+
+  productInput: {
+    marginTop: 50,
+    backgroundColor: 'blue',
+    width: '100%',
+    height: '20%'
+  },
+
+  listItem: {
+    marginTop: 25,
+    backgroundColor: 'green',
+    width: '100%'
+  },
+
+  buttonBorrar: {
+    margin: 20,
+    width: '50%',
+  }
 
 });
