@@ -1,15 +1,31 @@
 import { StyleSheet, Text, View, Image, Pressable} from 'react-native';
+import { useState } from 'react';
 
-const ListItem = () => {
+const ListItem = ({productName}) => {
+
+    let cambioImagenTipo = ''
+
+    switch (productName.type) {
+        case "fruit":
+                cambioImagenTipo = require('../assets/splash.png')
+            break;
+        case "fish":
+                cambioImagenTipo = require('../assets/icon.png')
+            break;
+        default:
+            break;
+    }
+
+    const [color, setColor] = useState('cyan');
 
     return (
-        <Pressable>
-            <View>
-                <View>
-                    <Image/>
-                    <View>
-                        <Text>Nombre</Text>  
-                        <Text>Tipo</Text>
+        <Pressable style={styles.listItem} onPress={() => setColor(color === 'blue' ? 'cyan' : 'blue') }>
+            <View  style={{backgroundColor: color,width:'100%', marginBottom: 10}} >
+                <View style={styles.productCard} >
+                    <Image style={styles.productImage} source={cambioImagenTipo} />
+                    <View style={styles.text}>
+                        <Text style={styles.productName}>{productName.quantity} x </Text> 
+                        <Text style={styles.productName}>{productName.name}</Text>
                     </View>
                 </View>
             </View>  
@@ -18,7 +34,10 @@ const ListItem = () => {
 }
 
 const styles = StyleSheet.create({
-
+    productImage: {
+        width: 100,
+        height: 100
+    },
 });
 
 export default ListItem
