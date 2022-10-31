@@ -8,7 +8,7 @@ En este proyecto se creara una lista de supermercado
 ## Estructura de la app
 ![](./assets/estructura.jpg)
 
-## Estructura de la app
+## Estilos de la app
 ![](./assets/estilos.jpg)
 ## Paginas web
 https://excalidraw.com/
